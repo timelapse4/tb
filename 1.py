@@ -7,7 +7,6 @@ from datetime import datetime, timedelta, timezone
 def print_welcome_message():
     print(r"""REDHATS""")
     print(Fore.GREEN + Style.BRIGHT + "TABI BOT")
- rename :)\n\n")
 
  
 
