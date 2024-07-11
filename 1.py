@@ -4,11 +4,12 @@ from colorama import Fore, Style, init
 import json
 from datetime import datetime, timedelta, timezone
 
-def print_welcome_message():
-    print(r"""REDHATS""")
-    print(Fore.GREEN + Style.BRIGHT + "TABI BOT")
 
- 
+def print_welcome_message():
+    print(r"""
+          REDHATS🎆
+          """)
+   
 
 
 headers = {
@@ -31,7 +32,15 @@ headers = {
 }
 
 
-
+def login_tabi(ghalibie):
+    url = 'https://app.tabibot.com/api/user/sign-in'
+    headers['rawdata'] = ghalibie
+    for attempt in range(3):
+        response = requests.post(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+       
+    return None
 
 def cekin_tabi(ghalibie):
     url = 'https://app.tabibot.com/api/user/check-in'
@@ -155,5 +164,4 @@ def animated_loading(duration):
     print("\rMenunggu waktu claim berikutnya selesai.                            ", flush=True)     
 if __name__ == "__main__":
     main()
-
 
