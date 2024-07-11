@@ -5,13 +5,6 @@ import json
 from datetime import datetime, timedelta, timezone
 
 
-def print_welcome_message():
-    print(r"""
-          REDHATS🎆
-          """)
-   
-
-
 headers = {
     'Accept': '*/*',
     'Accept-Language': 'en-US,en;q=0.9',
